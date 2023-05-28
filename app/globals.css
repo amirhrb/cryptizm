@@ -3,25 +3,43 @@
 @tailwind utilities;
 
 :root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+  --primaryColor: #f6a524;
+  --bgContainerColor: #fafafa;
+  --bgLayoutColor: #fff;
+  --contrastColor: #000;
+  --linkColor: #000;
+  --linkHoverColor: #656565;
+  --linkActiveColor: #000;
 }
-
 @media (prefers-color-scheme: dark) {
   :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+    --bgContainerColor: #0f0f0f;
+    --bgLayoutColor: #000;
+    --contrastColor: #fff;
+    --linkColor: #fff;
+    --linkHoverColor: #b2b2b2;
+    --linkActiveColor: #fff;
   }
 }
-
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+a {
+  text-decoration: none;
+  color: var(--linkColor);
+  cursor: pointer;
+}
+a:hover {
+  color: var(--linkHoverColor);
+}
+a:active {
+  color: var(--linkActiveColor);
+}
+body,
+html {
+  margin: 0;
+  padding: 0;
+}
+::-webkit-scrollbar {
+  display: none;
+}
+* {
+  -webkit-tap-highlight-color: transparent;
 }
